@@ -21,8 +21,8 @@ python ./cert_client.py -d mydomain.com -w
 ### 配置说明
 ```
 -d / --domain：更新证书的域名，一级、二级等不同级别的域名均可
--w / --wildcard：是否更新一级域名对应的www域名
-例如 -d mydomain.com 生成的证书，只支持mydomain.com的认证，而-d mydomain.com -w可以支持mydomain.com和www.mydomain.com这两个域名的认证
+-w / --wildcard：是否更新一级域名对应的通配符域名
+例如 -d mydomain.com 生成的证书，只支持mydomain.com的认证。而-d mydomain.com -w生成的证书，除了支持mydomain.com，还支持*.mydomain.com（即类似www.mydomain.com ）这样的域名也包含在内
 -q / --qiniu：域名是七牛上的域名（可以触发七牛证书的自动更新）；如果不使用-q则表示为百度云上的证书
 -h / --help：帮助信息
 -n / --not-upload：如果加上该参数，则生成的证书不上传至百度云/七牛云；不加参数，则生成的证书会自动上传至七牛云、百度云。其中七牛云会触发自动更新，替换使用新证书；百度云暂时没有接口进行触发，需要登录到百度云之后手动执行
